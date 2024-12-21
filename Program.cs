@@ -45,9 +45,10 @@ class Program
         school.AddStudent(student2);
         school.AddStudent(student3);
 
-        school.AddCourse(course1);
-        school.AddCourse(course2);
-        school.AddCourse(course3);
+        school.AddCourse(course1, teacher1);
+        school.AddCourse(course2, teacher2);
+        school.AddCourse(course3, teacher3);
+
 
         // Display all students, teachers, and courses
         school.DisplayAllStudents();
@@ -63,10 +64,10 @@ class Program
         school.DisplaySchoolDetails();
 
         // Print the details of a specific student
-        Console.WriteLine(student1.GetStudentDetails());
+        Console.WriteLine(student1.GetDetails());
 
         // Print the details of a specific teacher
-        Console.WriteLine(teacher1.GetTeacherDetails());
+        Console.WriteLine(teacher1.GetDetails());
 
         // Print the details of a specific course
         Console.WriteLine(course1.GetCourseDetails());
@@ -79,8 +80,6 @@ class Program
         int hashCode2 = c2.GetHashCode();
         Console.WriteLine($"Hash code for course1: {hashCode1}");
         Console.WriteLine($"Hash code for course2: {hashCode2}");
-
-
     }
 }
 

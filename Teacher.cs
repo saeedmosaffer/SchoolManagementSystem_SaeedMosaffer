@@ -24,14 +24,14 @@ namespace SchoolManagementSystem_SaeedMosaffer
             return assignedCourses;
         }
 
-        public string GetTeacherDetails()
+        public override string GetDetails()
         {
             string courses = "";
             foreach (Course course in assignedCourses)
             {
                 courses += course.GetCourseDetails() + "\n";
             }
-            return $"Teacher ID: {Id}, Name: {Name}, Age: {Age}, Admission Date: {AdmissionDate}, Courses:\n{courses}";
+            return $"Student ID: {Id}, Name: {Name}, Age: {Age}, Admission Date: {AdmissionDate.ToShortDateString()}, Courses:\n{courses},  School: {SCHOOL_NAME}";
         }
     }
 }

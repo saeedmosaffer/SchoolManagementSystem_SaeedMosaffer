@@ -29,9 +29,11 @@ namespace SchoolManagementSystem_SaeedMosaffer
             teachers.Add(teacher.Id, teacher);
         }
 
-        public void AddCourse(Course course)
+        public void AddCourse(Course course, Teacher teacher)
         {
-            courses.Add(course.Id, course);
+            course.Teacher = teacher;
+            courses[course.Id] = course;
+            teacher.AssignCourse(course);
         }
 
         public void DisplayAllStudents()
@@ -39,7 +41,7 @@ namespace SchoolManagementSystem_SaeedMosaffer
             Console.WriteLine("Students:");
             foreach (var student in students.Values)
             {
-                Console.WriteLine(student.GetStudentDetails());
+                Console.WriteLine(student.GetDetails());
             }
         }
 
@@ -48,7 +50,7 @@ namespace SchoolManagementSystem_SaeedMosaffer
             Console.WriteLine("Teachers:");
             foreach (var teacher in teachers.Values)
             {
-                Console.WriteLine(teacher.GetTeacherDetails());
+                Console.WriteLine(teacher.GetDetails());
             }
         }
 
